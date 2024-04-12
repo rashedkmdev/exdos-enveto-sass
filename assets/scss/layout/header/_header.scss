@@ -1,0 +1,112 @@
+@use "../../utils/" as *;
+
+.tp-transparent-header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.tp-main-menu {
+  & ul {
+    & li {
+      display: inline-block;
+      margin-right: 40px;
+      position: relative;
+      & a {
+        display: inline-block;
+        font-size: 18px;
+        color: var(--tp-white);
+        font-family: var(--tp-fonts-heading);
+        padding: 36px 0;
+      }
+      & .submenu {
+        width: 230px;
+        padding: 16px 0;
+        background-color: var(--tp-white);
+        position: absolute;
+        top: 105%;
+        left: 0;
+        transition: 0.3s;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 5;
+        & li {
+          display: block;
+          margin-right: 0;
+          & a {
+            color: var(--tp-heading-color);
+            display: block;
+            padding: 4px 25px;
+            font-size: 17px;
+          }
+          & .submenu {
+            left: 100%;
+            top: 10%;
+            opacity: 0;
+            visibility: hidden;
+          }
+          &:hover {
+            & > a {
+              color: var(--tp-theme-color);
+            }
+            & > .submenu {
+              opacity: 1;
+              visibility: visible;
+              top: 0;
+            }
+          }
+        }
+      }
+      &:hover {
+        & a {
+          color: var(--tp-theme-color-2);
+        }
+        & .submenu {
+          opacity: 1;
+          visibility: visible;
+          top: 100px;
+        }
+      }
+    }
+  }
+}
+
+.tp-header {
+  &-border {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  &-search {
+    padding-right: 40px;
+  }
+  &-cta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 28px 40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    &-icon {
+    }
+    &-text {
+      & span {
+        color: #b1b4ba;
+        font-size: 15px;
+        display: block;
+        margin-bottom: 9px;
+        line-height: 1;
+      }
+      & h4 {
+        color: #fff;
+        font-family: fedaro;
+        font-size: 18px;
+        margin: 0;
+        line-height: 1;
+      }
+    }
+  }
+  &-bar button {
+    background-color: #23252d;
+    display: block;
+    padding: 35px 23px;
+  }
+}

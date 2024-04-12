@@ -1,0 +1,21 @@
+@use "../../utils/" as *;
+
+.tp-hero {
+  &-title {
+    font-size: 110px;
+    text-transform: uppercase;
+    color: #fff;
+    & span {
+    }
+    & i {
+      font-size: 30px;
+      line-height: 2;
+      color: #b1b4ba;
+      display: inline-block;
+      font-style: normal;
+      margin-right: 50px;
+    }
+  }
+  &-btn {
+  }
+}
